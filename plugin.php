@@ -39,7 +39,7 @@ final class TeraxAIAssistant {
 	 * Define plugin constants.
 	 */
 	public function __construct() {
-		define( 'TERAX_AI_VERSION', '1.1.0' );
+		define( 'TERAX_AI_VERSION', '1.1.1' );
 		define( 'TERAX_AI_DB_VERSION', '1.3.0' );
 		define( 'TERAX_AI_PLUGIN_FILE', __DIR__ . '/terax-ai-assistant.php' );
 		define( 'TERAX_AI_DIR', plugin_dir_path( __FILE__ ) );

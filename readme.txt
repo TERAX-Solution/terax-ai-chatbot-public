@@ -1,10 +1,10 @@
 === TERAX AI Assistant ===
-Contributors: terax
+Contributors: teraxsolution23
 Tags: ai, chatbot, assistant, appointment, booking
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,9 @@ The "Book appointment" button is an ordinary link to the booking page you enter 
 The admin screens and the chat widget are built with Vite and React (admin) and Preact (chat widget). The compressed files are in `assets/admin/dist` and `assets/frontend/dist`; the readable source is in the public repository https://github.com/TERAX-Solution/terax-ai-chatbot-public (folder `src/`). To build them yourself: `npm ci` and `npm run build`.
 
 == Changelog ==
+
+= 1.1.1 =
+* The plugin page lists the correct WordPress.org contributor account
 
 = 1.1.0 =
 * Added: Insights page: questions the assistant could not answer, grouped by topic, with an "Add answer" shortcut to the Knowledge page; the Dashboard shows the answer rate

@@ -6,6 +6,11 @@ How to add an entry: every pull request adds one line under `## [Unreleased]`, i
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-11-09
+
+### Fixed
+- The plugin page lists the correct WordPress.org contributor account
+
 ## [1.1.0] - 2026-11-09
 
 ### Added

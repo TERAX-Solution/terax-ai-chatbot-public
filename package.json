@@ -1,6 +1,6 @@
 {
   "name": "terax-ai-assistant",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "scripts": {
     "dev": "concurrently \"vite -c vite.frontend.config.js --port 5173\" \"vite -c vite.admin.config.js --port 5174\"",
