@@ -1,0 +1,459 @@
+/* Rendered inside a Shadow DOM: theme CSS can't leak in, ours can't leak out. */
+:host {
+  all: initial;
+}
+.tx-root {
+  --tx-color: #0f766e;
+  --tx-on: #ffffff; /* readable text on the brand color; set from JS */
+  --tx-link: #0f766e; /* brand-colored text on white, >= 4.5:1; set from JS */
+  --tx-bg: #ffffff;
+  --tx-fg: #1f2937;
+  --tx-muted: #6b7280;
+  --tx-border: #e5e7eb;
+  --tx-soft: #f3f4f6;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--tx-fg);
+  -webkit-font-smoothing: antialiased;
+}
+.tx-root *,
+.tx-root *::before,
+.tx-root *::after {
+  box-sizing: border-box;
+}
+.tx-root button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Launcher */
+.tx-floating,
+.tx-root:not(.tx-inline) {
+  position: fixed;
+  bottom: 20px;
+  z-index: 2147483000;
+}
+.tx-right:not(.tx-inline) {
+  right: 20px;
+}
+.tx-left:not(.tx-inline) {
+  left: 20px;
+}
+.tx-launcher {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--tx-color);
+  color: var(--tx-on);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease;
+}
+.tx-launcher:hover {
+  transform: scale(1.06);
+}
+.tx-launcher svg {
+  width: 28px;
+  height: 28px;
+}
+/* Two-tone ring (dark outline + white halo) stays visible on any brand color. */
+.tx-root :focus-visible {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px #ffffff;
+}
+.tx-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Panel */
+.tx-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--tx-bg);
+  border: 1px solid var(--tx-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+}
+.tx-floating .tx-panel {
+  width: 380px;
+  height: min(620px, calc(100vh - 40px));
+}
+.tx-inline {
+  height: 100%;
+}
+.tx-inline .tx-panel {
+  height: 100%;
+  width: 100%;
+  box-shadow: none;
+}
+@media (max-width: 480px) {
+  .tx-floating {
+    inset: 0 !important;
+  }
+  .tx-floating .tx-panel {
+    width: 100vw;
+    height: 100dvh;
+    border-radius: 0;
+    border: 0;
+  }
+}
+
+.tx-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px 12px 16px;
+  background: var(--tx-color);
+  color: var(--tx-on);
+}
+.tx-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: color-mix(in srgb, currentColor 18%, transparent);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.tx-title {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.tx-title strong {
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tx-title span {
+  font-size: 12px;
+}
+.tx-icon-btn {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+.tx-icon-btn:hover {
+  background: color-mix(in srgb, currentColor 16%, transparent);
+}
+
+/* Messages */
+.tx-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fafafa;
+}
+.tx-msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 88%;
+}
+.tx-user {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+.tx-assistant {
+  align-self: flex-start;
+}
+.tx-bubble {
+  padding: 10px 14px;
+  border-radius: 16px;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+.tx-user .tx-bubble {
+  background: var(--tx-color);
+  color: var(--tx-on);
+  border-bottom-right-radius: 4px;
+  white-space: pre-wrap;
+}
+.tx-assistant .tx-bubble {
+  background: #fff;
+  border: 1px solid var(--tx-border);
+  border-bottom-left-radius: 4px;
+}
+.tx-error .tx-bubble {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+.tx-bubble p {
+  margin: 0 0 8px;
+}
+.tx-bubble p:last-child {
+  margin-bottom: 0;
+}
+.tx-bubble ul,
+.tx-bubble ol {
+  margin: 4px 0 8px;
+  padding-left: 20px;
+}
+.tx-bubble a {
+  color: var(--tx-link);
+  text-decoration: underline;
+}
+.tx-sources {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--tx-muted);
+}
+.tx-sources a {
+  color: var(--tx-muted);
+  margin-right: 8px;
+}
+
+.tx-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tx-suggestions button {
+  border: 1px solid color-mix(in srgb, var(--tx-color) 40%, white);
+  background: #fff;
+  color: var(--tx-link);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+.tx-suggestions button:hover {
+  background: color-mix(in srgb, var(--tx-color) 8%, white);
+}
+
+.tx-primary {
+  border: 0;
+  background: var(--tx-color);
+  color: var(--tx-on);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+.tx-primary:hover {
+  filter: brightness(1.08);
+}
+.tx-action {
+  margin-top: 8px;
+  align-self: flex-start;
+}
+
+.tx-typing {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  height: 40px;
+}
+.tx-typing .tx-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--tx-muted);
+  border-radius: 50%;
+  animation: tx-bounce 1.2s infinite ease-in-out;
+}
+.tx-typing .tx-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.tx-typing .tx-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes tx-bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* Input */
+.tx-input {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 10px 12px;
+  border-top: 1px solid var(--tx-border);
+  background: #fff;
+}
+.tx-input textarea {
+  flex: 1;
+  resize: none;
+  border: 1px solid var(--tx-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  color: inherit;
+  max-height: 120px;
+  min-height: 42px;
+  background: #fff;
+}
+.tx-send {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 0;
+  background: var(--tx-color);
+  color: var(--tx-on);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.tx-send:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.tx-consent {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--tx-muted);
+}
+.tx-consent p {
+  margin: 0;
+}
+.tx-consent a {
+  color: var(--tx-link);
+}
+
+.tx-branding {
+  text-align: center;
+  font-size: 11px;
+  padding: 4px 0 6px;
+  background: #fff;
+}
+.tx-branding a {
+  color: var(--tx-muted);
+  text-decoration: none;
+}
+
+/* Booking modal (fixed to viewport) */
+.tx-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: grid;
+  place-items: center;
+  z-index: 2147483001;
+}
+.tx-modal iframe {
+  width: min(960px, 94vw);
+  height: min(800px, 88vh);
+  border: 0;
+  border-radius: 12px;
+  background: #fff;
+}
+.tx-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #fff;
+  color: #111;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tx-launcher,
+  .tx-typing .tx-dot {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Lead form (sales mode) */
+.tx-lead {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid var(--tx-border);
+  border-radius: 12px;
+  background: #fff;
+}
+.tx-lead label {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--tx-muted);
+}
+.tx-lead input[type="text"],
+.tx-lead input[type="tel"],
+.tx-lead input[type="email"],
+.tx-lead textarea,
+.tx-lead select {
+  border: 1px solid var(--tx-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font: inherit;
+  color: var(--tx-fg);
+  background: #fff;
+}
+.tx-lead .tx-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.tx-lead .tx-check input {
+  margin-top: 3px;
+}
+.tx-lead a {
+  color: var(--tx-link);
+}
+.tx-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.tx-lead-err {
+  margin: 0;
+  font-size: 13px;
+  color: #b91c1c;
+}
+.tx-lead-done {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--tx-fg);
+}

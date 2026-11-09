@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<ruleset name="TERAX AI Assistant" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+	<description>WordPress Coding Standards for TERAX AI Assistant. Run: composer lint (check), composer lint:fix (auto-fix what can be fixed).</description>
+
+	<file>.</file>
+
+	<arg name="extensions" value="php"/>
+	<arg name="basepath" value="."/>
+	<arg name="parallel" value="8"/>
+	<arg value="ps"/>
+
+	<!-- The plugin header says "Requires PHP: 7.4" and "Requires at least: 6.2". -->
+	<config name="testVersion" value="7.4-"/>
+	<config name="minimum_supported_wp_version" value="6.2"/>
+
+	<!-- Warnings are shown but do not fail the check (composer lint). Errors do. -->
+	<config name="ignore_warnings_on_exit" value="1"/>
+
+	<rule ref="PHPCompatibilityWP"/>
+
+	<rule ref="WordPress-Core">
+		<!-- Class files are named after the class (PSR-4), not class-*.php. -->
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+		<!-- Magic methods such as __construct are fine. -->
+		<exclude name="Generic.NamingConventions.CamelCapsFunctionName.MethodDoubleUnderscore"/>
+		<exclude name="WordPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore"/>
+		<exclude name="WordPress.NamingConventions.ValidFunctionName.MethodDoubleUnderscore"/>
+		<!-- Doc style the project does not use. -->
+		<exclude name="Generic.Commenting.DocComment.MissingShort"/>
+		<exclude name="Generic.Commenting.DocComment.ShortNotCapital"/>
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamTag"/>
+		<exclude name="Squiz.Commenting.InlineComment.WrongStyle"/>
+	</rule>
+
+	<rule ref="WordPress-Docs"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="terax-ai-assistant"/>
+				<element value="terax-ai-assistant-pro"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="terax_ai"/>
+				<element value="TeraxAI"/>
+				<element value="TERAX_AI"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="PEAR.Functions.FunctionCallSignature">
+		<properties>
+			<property name="allowMultipleArguments" value="false"/>
+		</properties>
+	</rule>
+
+	<!-- Not PHP source of the plugin: builds, dependencies, front-end sources, release output, tests. -->
+	<exclude-pattern>*/bin/*</exclude-pattern>
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/assets/*</exclude-pattern>
+	<exclude-pattern>*/src/*</exclude-pattern>
+	<exclude-pattern>*/release/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+	<exclude-pattern>*/languages/*</exclude-pattern>
+	<exclude-pattern>*/scripts/*</exclude-pattern>
+</ruleset>

@@ -1,0 +1,42 @@
+{
+  "name": "terax/terax-ai-assistant",
+  "description": "TERAX AI Assistant - AI chatbot answering from site content with appointment booking.",
+  "autoload": {
+    "psr-4": {
+      "TeraxAI\\": "includes/",
+      "TeraxAI\\Database\\": "database/",
+      "TeraxAI\\Libs\\": "libs/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "TeraxAI\\Tests\\": "tests/php/"
+    }
+  },
+  "require": {
+    "php": ">=7.4"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "platform": {
+      "php": "7.4.33"
+    }
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.13",
+    "wp-coding-standards/wpcs": "^3.1",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+    "phpunit/phpunit": "^9.6",
+    "yoast/phpunit-polyfills": "^2.0"
+  },
+  "scripts": {
+    "post-install-cmd": "@php vendor/squizlabs/php_codesniffer/bin/phpcs --config-set installed_paths ../../wp-coding-standards/wpcs,../../phpcompatibility/php-compatibility,../../phpcompatibility/phpcompatibility-paragonie,../../phpcompatibility/phpcompatibility-wp,../../phpcsstandards/phpcsextra,../../phpcsstandards/phpcsutils",
+    "post-update-cmd": "@php vendor/squizlabs/php_codesniffer/bin/phpcs --config-set installed_paths ../../wp-coding-standards/wpcs,../../phpcompatibility/php-compatibility,../../phpcompatibility/phpcompatibility-paragonie,../../phpcompatibility/phpcompatibility-wp,../../phpcsstandards/phpcsextra,../../phpcsstandards/phpcsutils",
+    "lint": "@php vendor/squizlabs/php_codesniffer/bin/phpcs",
+    "lint:fix": "@php vendor/squizlabs/php_codesniffer/bin/phpcbf"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "plugin_name": "TERAX AI Assistant",
+  "plugin_description": "AI assistant that answers visitor questions from your site content and hands off to appointment booking.",
+  "plugin_version": "1.0.0",
+  "plugin_file_name": "terax-ai-assistant.php",
+  "author_name": "TERAX",
+  "author_uri": "https://terax.dev",
+  "text_domain": "terax-ai-assistant",
+  "domain_path": "/languages",
+  "main_class_name": "TeraxAIAssistant",
+  "main_function_name": "terax_ai_assistant_init",
+  "namespace": "TeraxAI",
+  "plugin_prefix": "terax_ai",
+  "constant_prefix": "TERAX_AI"
+}

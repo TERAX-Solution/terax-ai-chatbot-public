@@ -1,0 +1,159 @@
+# German (formal, "Sie") translation of TERAX AI Assistant.
+# Glossary: Assistent, Wissensdatenbank, Terminbuchung, Lizenz, Unterhaltung.
+msgid ""
+msgstr ""
+"Project-Id-Version: TERAX AI Assistant 1.0.0\n"
+"Report-Msgid-Bugs-To: https://terax.dev\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"Language-Team: German\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: terax-ai-assistant\n"
+
+msgid "TERAX AI Assistant"
+msgstr "TERAX KI-Assistent"
+
+msgid "AI assistant that answers visitor questions from your site content and hands off to appointment booking."
+msgstr "KI-Assistent, der Fragen Ihrer Besucher anhand Ihrer Website-Inhalte beantwortet und zur Terminbuchung weiterleitet."
+
+msgid "TERAX"
+msgstr "TERAX"
+
+msgid "https://terax.dev"
+msgstr "https://terax.dev"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Knowledge"
+msgstr "Wissensdatenbank"
+
+msgid "Conversations"
+msgstr "Unterhaltungen"
+
+msgid "License"
+msgstr "Lizenz"
+
+msgid "Managed AI is not included in your plan. Add your own API key or upgrade."
+msgstr "Managed AI ist in Ihrem Tarif nicht enthalten. Hinterlegen Sie einen eigenen API-Schlüssel oder wechseln Sie auf einen höheren Tarif."
+
+msgid "Unknown AI provider \"%s\"."
+msgstr "Unbekannter KI-Anbieter „%s“."
+
+msgid "No API key configured for this provider."
+msgstr "Für diesen Anbieter ist kein API-Schlüssel hinterlegt."
+
+msgid "Invalid JSON response from AI provider."
+msgstr "Ungültige JSON-Antwort des KI-Anbieters."
+
+msgid "AI provider error (HTTP %1$d): %2$s"
+msgstr "Fehler des KI-Anbieters (HTTP %1$d): %2$s"
+
+msgid "Base URL is required for the OpenAI-compatible provider."
+msgstr "Für den OpenAI-kompatiblen Anbieter ist eine Basis-URL erforderlich."
+
+msgid "Booking link (Dr. Flex, Doctolib, Calendly …)"
+msgstr "Buchungslink (Dr. Flex, Doctolib, Calendly …)"
+
+msgid "Book appointment"
+msgstr "Termin buchen"
+
+msgid "The assistant is currently disabled."
+msgstr "Der Assistent ist derzeit deaktiviert."
+
+msgid "Message and session are required."
+msgstr "Nachricht und Sitzung sind erforderlich."
+
+msgid "Too many messages. Please try again later."
+msgstr "Zu viele Nachrichten. Bitte versuchen Sie es später erneut."
+
+msgid "Sorry, I can't answer right now. Please contact us directly."
+msgstr "Leider kann ich gerade nicht antworten. Bitte kontaktieren Sie uns direkt."
+
+msgid "Conversation not found."
+msgstr "Unterhaltung nicht gefunden."
+
+msgid "Please enter a license key."
+msgstr "Bitte geben Sie einen Lizenzschlüssel ein."
+
+msgid "Practice information"
+msgstr "Praxisinformationen"
+
+msgid "Activation failed."
+msgstr "Die Aktivierung ist fehlgeschlagen."
+
+msgid "This license key is not for TERAX AI Assistant."
+msgstr "Dieser Lizenzschlüssel gehört nicht zum TERAX KI-Assistenten."
+
+msgid "License key is not valid."
+msgstr "Der Lizenzschlüssel ist ungültig."
+
+#: includes/AI/ProviderHealth.php
+msgid "the API key is invalid, expired or missing."
+msgstr "der API-Schlüssel ist ungültig, abgelaufen oder fehlt."
+
+#: includes/AI/ProviderHealth.php
+msgid "the AI account has no credit left."
+msgstr "das KI-Konto hat kein Guthaben mehr."
+
+#: includes/AI/ProviderHealth.php
+msgid "the AI provider’s quota or rate limit is used up."
+msgstr "das Kontingent bzw. Anfragelimit des KI-Anbieters ist aufgebraucht."
+
+#: includes/AI/ProviderHealth.php
+msgid "the selected AI model was not found."
+msgstr "das gewählte KI-Modell wurde nicht gefunden."
+
+#: includes/AI/ProviderHealth.php
+msgid "the AI provider is currently unavailable."
+msgstr "der KI-Anbieter ist derzeit nicht verfügbar."
+
+#: includes/AI/ProviderHealth.php
+msgid "the AI provider could not be reached (network error or timeout)."
+msgstr "der KI-Anbieter ist nicht erreichbar (Netzwerkfehler oder Zeitüberschreitung)."
+
+#: includes/AI/ProviderHealth.php
+msgid "the AI provider rejected the request."
+msgstr "der KI-Anbieter hat die Anfrage abgelehnt."
+
+#: includes/AI/ProviderHealth.php
+#, php-format
+msgid "[%s] AI Assistant: answers are failing"
+msgstr "[%s] KI-Assistent: Antworten schlagen fehl"
+
+#: includes/AI/ProviderHealth.php
+#, php-format
+msgid ""
+"Your AI Assistant could not answer %1$d visitor questions in a row: %2$s\n"
+"\n"
+"Message from the AI provider: %3$s\n"
+"\n"
+"Please check the settings: %4$s\n"
+"\n"
+"This e-mail is sent at most once every 24 hours. You can turn it off under AI Assistant → Settings → Privacy."
+msgstr ""
+"Ihr KI-Assistent konnte %1$d Besucherfragen in Folge nicht beantworten: %2$s\n"
+"\n"
+"Meldung des KI-Anbieters: %3$s\n"
+"\n"
+"Bitte prüfen Sie die Einstellungen: %4$s\n"
+"\n"
+"Diese E-Mail wird höchstens einmal alle 24 Stunden gesendet. Sie können sie unter KI-Assistent → Einstellungen → Datenschutz ausschalten."
+
+#: includes/Admin/Notices.php
+msgid "AI Assistant:"
+msgstr "KI-Assistent:"
+
+#: includes/Admin/Notices.php
+#, php-format
+msgid "answers are failing – %s"
+msgstr "Antworten schlagen fehl – %s"
+
+#: includes/Admin/Notices.php
+msgid "Check settings →"
+msgstr "Einstellungen prüfen →"

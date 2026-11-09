@@ -1,0 +1,191 @@
+# Copyright (C) 2026 TERAX
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: TERAX AI Assistant 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/terax-ai-assistant\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-28T03:03:30+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: terax-ai-assistant\n"
+
+#. Plugin Name of the plugin
+#: terax-ai-assistant.php
+msgid "TERAX AI Assistant"
+msgstr ""
+
+#. Description of the plugin
+#: terax-ai-assistant.php
+msgid "AI assistant that answers visitor questions from your site content and hands off to appointment booking."
+msgstr ""
+
+#. Author of the plugin
+#: terax-ai-assistant.php
+msgid "TERAX"
+msgstr ""
+
+#. Author URI of the plugin
+#: terax-ai-assistant.php
+msgid "https://terax.dev"
+msgstr ""
+
+#: includes/Admin/Menu.php:47
+msgid "Dashboard"
+msgstr ""
+
+#: includes/Admin/Menu.php:48
+#: includes/Admin/Menu.php:78
+msgid "Settings"
+msgstr ""
+
+#: includes/Admin/Menu.php:49
+msgid "Knowledge"
+msgstr ""
+
+#: includes/Admin/Menu.php:50
+msgid "Conversations"
+msgstr ""
+
+#: includes/Admin/Menu.php:51
+msgid "License"
+msgstr ""
+
+#: includes/AI/ProviderRegistry.php:85
+msgid "Managed AI is not included in your plan. Add your own API key or upgrade."
+msgstr ""
+
+#. translators: %s provider id
+#: includes/AI/ProviderRegistry.php:93
+#, php-format
+msgid "Unknown AI provider \"%s\"."
+msgstr ""
+
+#: includes/AI/Providers/AbstractProvider.php:77
+msgid "No API key configured for this provider."
+msgstr ""
+
+#: includes/AI/Providers/AbstractProvider.php:108
+msgid "Invalid JSON response from AI provider."
+msgstr ""
+
+#. translators: 1: HTTP status, 2: message
+#: includes/AI/Providers/AbstractProvider.php:141
+#, php-format
+msgid "AI provider error (HTTP %1$d): %2$s"
+msgstr ""
+
+#: includes/AI/Providers/OpenAICompatible.php:31
+msgid "Base URL is required for the OpenAI-compatible provider."
+msgstr ""
+
+#: includes/Booking/Providers/ExternalLink.php:59
+msgid "Booking link (Dr. Flex, Doctolib, Calendly …)"
+msgstr ""
+
+#: includes/Booking/Providers/ExternalLink.php:79
+msgid "Book appointment"
+msgstr ""
+
+#: includes/Chat/ChatService.php:50
+msgid "The assistant is currently disabled."
+msgstr ""
+
+#: includes/Chat/ChatService.php:56
+#: includes/Chat/ChatService.php:66
+msgid "Message and session are required."
+msgstr ""
+
+#: includes/Chat/ChatService.php:73
+msgid "Too many messages. Please try again later."
+msgstr ""
+
+#: includes/Chat/ChatService.php:265
+msgid "Sorry, I can't answer right now. Please contact us directly."
+msgstr ""
+
+#: includes/Controllers/ConversationsController.php:42
+msgid "Conversation not found."
+msgstr ""
+
+#: includes/Controllers/LicenseController.php:37
+msgid "Please enter a license key."
+msgstr ""
+
+#: includes/Knowledge/Indexer.php:152
+msgid "Practice information"
+msgstr ""
+
+#: includes/License/Clients/LemonSqueezyClient.php:37
+msgid "Activation failed."
+msgstr ""
+
+#: includes/License/Clients/LemonSqueezyClient.php:86
+msgid "This license key is not for TERAX AI Assistant."
+msgstr ""
+
+#: includes/License/LicenseManager.php:185
+msgid "License key is not valid."
+msgstr ""
+
+#: includes/AI/ProviderHealth.php
+msgid "the API key is invalid, expired or missing."
+msgstr ""
+
+#: includes/AI/ProviderHealth.php
+msgid "the AI account has no credit left."
+msgstr ""
+
+#: includes/AI/ProviderHealth.php
+msgid "the AI provider’s quota or rate limit is used up."
+msgstr ""
+
+#: includes/AI/ProviderHealth.php
+msgid "the selected AI model was not found."
+msgstr ""
+
+#: includes/AI/ProviderHealth.php
+msgid "the AI provider is currently unavailable."
+msgstr ""
+
+#: includes/AI/ProviderHealth.php
+msgid "the AI provider could not be reached (network error or timeout)."
+msgstr ""
+
+#: includes/AI/ProviderHealth.php
+msgid "the AI provider rejected the request."
+msgstr ""
+
+#: includes/AI/ProviderHealth.php
+#, php-format
+msgid "[%s] AI Assistant: answers are failing"
+msgstr ""
+
+#: includes/AI/ProviderHealth.php
+#, php-format
+msgid ""
+"Your AI Assistant could not answer %1$d visitor questions in a row: %2$s\n"
+"\n"
+"Message from the AI provider: %3$s\n"
+"\n"
+"Please check the settings: %4$s\n"
+"\n"
+"This e-mail is sent at most once every 24 hours. You can turn it off under AI Assistant → Settings → Privacy."
+msgstr ""
+
+#: includes/Admin/Notices.php
+msgid "AI Assistant:"
+msgstr ""
+
+#: includes/Admin/Notices.php
+#, php-format
+msgid "answers are failing – %s"
+msgstr ""
+
+#: includes/Admin/Notices.php
+msgid "Check settings →"
+msgstr ""
