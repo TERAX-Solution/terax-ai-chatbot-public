@@ -14,10 +14,11 @@ show() {
 
 fail=0
 expect() { # file, fixed line text, label
-  if show "$1" | grep -Fxq -- "$2"; then echo "ok    $3"; else echo "FAIL  $3 (expected: $2)"; fail=1; fi
+  # No grep -q here: it exits at the first match, the writer then gets SIGPIPE and pipefail fails the check (seen with a longer readme.txt).
+  if show "$1" | grep -Fx -- "$2" >/dev/null; then echo "ok    $3"; else echo "FAIL  $3 (expected: $2)"; fail=1; fi
 }
 expect_in() { # file, fixed substring, label
-  if show "$1" | grep -Fq -- "$2"; then echo "ok    $3"; else echo "FAIL  $3 (expected: $2)"; fail=1; fi
+  if show "$1" | grep -F -- "$2" >/dev/null; then echo "ok    $3"; else echo "FAIL  $3 (expected: $2)"; fail=1; fi
 }
 
 expect terax-ai-assistant.php " * Version: $v" "plugin header Version: $v"

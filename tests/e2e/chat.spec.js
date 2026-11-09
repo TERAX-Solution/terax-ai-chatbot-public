@@ -97,13 +97,14 @@ test("3. the model forgets the token, the word 'Termin' still gives the booking 
 });
 
 test("4. booking switched off: no booking button", async () => {
-  await saveSettings({ booking: { enabled: false } });
+  // The call-back form (offered by plans with it, for example with the Pro add-on) is a different action: switch it off too.
+  await saveSettings({ booking: { enabled: false }, assistant: { callback: false } });
   try {
     const { status, body } = await ask("Ich brauche einen Termin");
     expect(status).toBe(200);
     expect(body.actions).toEqual([]);
   } finally {
-    await saveSettings({ booking: { enabled: true } });
+    await saveSettings({ booking: { enabled: true }, assistant: { callback: true } });
   }
 });
 

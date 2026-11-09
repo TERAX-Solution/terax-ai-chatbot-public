@@ -6,6 +6,8 @@ How to add an entry: every pull request adds one line under `## [Unreleased]`, i
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-09
+
 ### Added
 - Insights page: questions the assistant could not answer, grouped by topic, with an "Add answer" shortcut to the Knowledge page; the Dashboard shows the answer rate
 - Call-back requests: a form in the chat when the assistant cannot answer, and a Requests page in the admin
@@ -15,6 +17,7 @@ How to add an entry: every pull request adds one line under `## [Unreleased]`, i
 - CSV export of conversations with a choice of separator for German or US Excel
 
 ### Changed
+- The Pro upgrade hint in the admin is now a single animated line on the Dashboard that can be dismissed, instead of a large banner on every page
 - The free plugin no longer limits messages, indexed pages or log retention, and the "Powered by TERAX" link in the chat is off until you turn it on in the settings
 - The admin hides the License page unless the Pro add-on is active
 - The paid features (licence, Managed AI, sales mode, call-back requests, custom instructions, insights) now come from the separate "TERAX AI Assistant Pro" add-on; the free plugin has no licence code and sends nothing to TERAX servers

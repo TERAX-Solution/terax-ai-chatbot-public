@@ -81,31 +81,33 @@ module.exports = {
   					height: '0'
   				}
   			},
-  			'terax-float': {
-  				'0%, 100%': { transform: 'translateY(0)' },
-  				'50%': { transform: 'translateY(-14px)' }
-  			},
-  			'terax-glow': {
-  				'0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(255,255,255,0.35)' },
-  				'50%': { transform: 'scale(1.06)', boxShadow: '0 0 0 12px rgba(255,255,255,0)' }
-  			},
   			'terax-shine': {
-  				'0%': { transform: 'translateX(-150%) skewX(-20deg)' },
-  				'55%, 100%': { transform: 'translateX(450%) skewX(-20deg)' }
+  				'0%': { transform: 'translateX(-120%) skewX(-20deg)' },
+  				'60%, 100%': { transform: 'translateX(500%) skewX(-20deg)' }
   			},
-  			'terax-rise': {
-  				from: { opacity: '0', transform: 'translateY(8px)' },
-  				to: { opacity: '1', transform: 'translateY(0)' }
+  			'terax-hop': {
+  				'0%, 100%': { transform: 'translateY(0)' },
+  				'50%': { transform: 'translateY(-2px)' }
+  			},
+  			'terax-wiggle': {
+  				'0%, 60%, 100%': { transform: 'rotate(0deg) scale(1)' },
+  				'68%': { transform: 'rotate(-6deg) scale(1.08)' },
+  				'76%': { transform: 'rotate(6deg) scale(1.08)' },
+  				'84%': { transform: 'rotate(-4deg) scale(1.08)' },
+  				'92%': { transform: 'rotate(3deg) scale(1.04)' }
+  			},
+  			'terax-sheen': {
+  				'0%': { backgroundPosition: '0% 50%' },
+  				'100%': { backgroundPosition: '200% 50%' }
   			}
   		},
   		animation: {
-  			'terax-float': 'terax-float 7s ease-in-out infinite',
-  			'terax-float-slow': 'terax-float 10s ease-in-out infinite reverse',
-  			'terax-glow': 'terax-glow 2.8s ease-out infinite',
-  			'terax-shine': 'terax-shine 4s ease-in-out infinite',
-  			'terax-rise': 'terax-rise 0.5s ease-out both',
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'terax-sheen': 'terax-sheen 5s linear infinite',
+  			'terax-hop': 'terax-hop 1.6s ease-in-out infinite',
+  			'terax-wiggle': 'terax-wiggle 3s ease-in-out infinite',
+  			'terax-shine': 'terax-shine 3.5s ease-in-out infinite'
   		}
   	}
   },

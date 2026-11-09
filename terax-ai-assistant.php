@@ -4,7 +4,7 @@
  * Description: AI assistant that answers visitor questions from your site content and hands off to appointment booking.
  * Author: TERAX
  * Author URI: https://terax.dev
- * Version: 1.0.0
+ * Version: 1.1.0
  * Requires at least: 6.2
  * Requires PHP: 7.4
  * License: GPLv2 or later

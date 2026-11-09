@@ -4,7 +4,7 @@ Tags: ai, chatbot, assistant, appointment, booking
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,26 @@ The "Book appointment" button is an ordinary link to the booking page you enter 
 The admin screens and the chat widget are built with Vite and React (admin) and Preact (chat widget). The compressed files are in `assets/admin/dist` and `assets/frontend/dist`; the readable source is in the public repository https://github.com/TERAX-Solution/terax-ai-chatbot-public (folder `src/`). To build them yourself: `npm ci` and `npm run build`.
 
 == Changelog ==
+
+= 1.1.0 =
+* Added: Insights page: questions the assistant could not answer, grouped by topic, with an "Add answer" shortcut to the Knowledge page; the Dashboard shows the answer rate
+* Added: Call-back requests: a form in the chat when the assistant cannot answer, and a Requests page in the admin
+* Added: Sales mode with a lead form for sites that are not medical practices
+* Added: First-run setup wizard (AI connection, booking link, build the knowledge index)
+* Added: Notice in the admin and an e-mail to the site admin when the AI provider keeps failing
+* Added: CSV export of conversations with a choice of separator for German or US Excel
+* Changed: The Pro upgrade hint in the admin is now a single animated line on the Dashboard that can be dismissed, instead of a large banner on every page
+* Changed: The free plugin no longer limits messages, indexed pages or log retention, and the "Powered by TERAX" link in the chat is off until you turn it on in the settings
+* Changed: The admin hides the License page unless the Pro add-on is active
+* Changed: The paid features (licence, Managed AI, sales mode, call-back requests, custom instructions, insights) now come from the separate "TERAX AI Assistant Pro" add-on; the free plugin has no licence code and sends nothing to TERAX servers
+* Changed: The admin loads faster: its script is split per page (about 216 KB down to 91 KB gzip)
+* Changed: The admin uses the React that WordPress already loads instead of its own copy, so its main script is about half the size (47 KB instead of 91 KB gzip) and keeps working when WordPress updates React
+* Changed: Questions in German now find content written in English, and the other way round
+* Changed: An API key that cannot be decrypted (changed salt, moved site) is no longer sent to the AI vendor; the admin asks to enter the key again
+* Fixed: The Conversations, Requests and Insights pages were blank on sites with plain permalinks
+* Fixed: A page added to the excluded pages stayed searchable until the next index rebuild
+* Fixed: A link label could be replaced in the middle of a sentence
+* Fixed: Pages built with Divi, WPBakery or Avada lost all their text in the knowledge index; the text and the accordion titles are now indexed
 
 = 1.0.0 =
 * Initial release.

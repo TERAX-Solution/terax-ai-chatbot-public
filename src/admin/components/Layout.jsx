@@ -63,7 +63,6 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <ProBanner />
       <header className="border-b bg-white">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-6 px-6">
           <div className="flex items-center gap-2 py-4 font-semibold">
@@ -105,6 +104,7 @@ export default function Layout() {
           )}
         </div>
       </header>
+      <ProBanner />
       <main className="mx-auto max-w-6xl px-6 py-8">
         <Suspense fallback={<Loading />}>
           <Outlet />
